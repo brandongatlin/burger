@@ -1,0 +1,33 @@
+body {
+  background-color: yellow;
+}
+
+.col-md-4 {
+  /* border: 1px solid black; */
+}
+
+.row {
+  /* border: 1px solid red; */
+}
+
+#pic-container {
+/* border: 1px dotted orange; */
+}
+
+#slider {
+  height: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.input-group {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+}
