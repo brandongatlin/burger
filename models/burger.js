@@ -1,4 +1,4 @@
-// const burger = require("./orm.js");
+// const ORM = require("./orm.js");
 
 var userBurger;
 
