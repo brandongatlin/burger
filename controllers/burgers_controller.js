@@ -1,34 +1,16 @@
-const express = require("express");
+const express = require( "express" );
 
-const app = express();
+const router = express.Router();
 
-const burger = require("./burger.js");
+// const burger = require( "../models/burger.js" );
 
-//routes here
-// Parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({
-  extended: false
-}));
-app.use(bodyParser.json());
 
-var exphbs = require("express-handlebars");
+router.get( "/", function( req, res ) {
+  console.log( "route is getting hit" );
+  res.send( "getting hit" );
+  // res.render( "index", {
+  // data
+  //   } );
+} );
 
-app.engine("handlebars", exphbs({
-  defaultLayout: "main"
-}));
-
-app.set("view engine", "handlebars");
-
-var mysql = require("mysql");
-
-app.get("/", function(req, res) {
-  connection.query("SELECT * FROM burgers", [req.body.burgers], function(err, result) {
-    if (err) {
-      return res.status(500).end();
-    }
-
-    res.render("index.html", {
-      burgers: data
-    });
-  });
-});
+module.exports = router;
