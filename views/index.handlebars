@@ -1,14 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Burgers!!!</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="public/assets/css/burger_style.css">
+
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-4">
+
+        <p>1</p>
+      </div>
+
+      <div class="col-md-4">
+        <div id="pic-container">
+          <img src="../../assets/img/burger.png" id="slider">
+        </div>
+        <h1>Eat Da Burger!</h1>
+        <div class="input-group" id="input-group">
+          <input type="text" class="form-control" id="burger-input" placeholder="Burger" aria-label="burger" aria-describedby="burger-input">
+          <input class="btn btn-primary" id="submit" type="submit" value="Submit">
+          <p>Enter the name of a burger, then click submit!</p>
+
+        </div>
+
+      </div>
+
+      <div class="col-md-4">
+
+        <p>3</p>
+      </div>
+
+
+    </div>
+    <!--close row-->
+
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="../../models/burger.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
 <h1>Burgers!</h1>
 
 <h2>Eat it!</h2>
 
-<table>
-<tr>
-  <!--do this!-->
-{{#each data}}
+<h3>Not Devoured</h3>
+<ul>
+  {{#each burgers}}
+    {{#unless this.devoured}}
+      <li>
+        {{this.burger_name}}
 
-</tr>
+        <form action="/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="not_devoured" value="true">
+          <button type="submit">Eat it!</button>
+        </form>
 
-{{/each}}
+      </li>
+    {{/unless}}
+  {{/each}}
+</ul>
 
-</table>
+<h2>Already eaten!</h2>
+<ul>
+  {{#each burgers}}
+    {{#if this.devoured}}
+      <li>
+        {{this.burger_name}}
+
+        <form action="/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="not_eaten" value="false">
+          <button type="submit">?</button>
+        </form>
+
+      </li>
+    {{/if}}
+  {{/each}}
+</ul>

@@ -8,7 +8,7 @@ const orm = require("../config/orm.js");
 var burger = {
   all: function(cb) {
     orm.all(function(res) {
-      console.log("res:", res);
+      // console.log("res:", res);
 
       cb(res);
     });

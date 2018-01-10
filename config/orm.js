@@ -6,7 +6,7 @@ var orm = {
       if (err) {
         throw (err);
       }
-      console.log("query is", res);
+      // console.log("query is", res);
 
       cb(res);
 

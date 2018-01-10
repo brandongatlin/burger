@@ -2,12 +2,14 @@ const express = require("express");
 const methodOverride = require("method-override");
 const bodyParser = require("body-parser");
 const routes = require("./controllers/burgers_controller.js")
-
+// const path = require("path");
 const app = express();
 
 var exphbs = require("express-handlebars");
 
 const port = 3000;
+
+// const publicPath = path.join(__dirname, '../public');
 
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.urlencoded({
