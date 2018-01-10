@@ -1,29 +1,18 @@
-const connection = require( "./connection.js" );
-
-// function selectAll() {
-//
-//   connection.query( "SELECT * FROM burgers;", function( err, results ) {
-//
-//     if ( err ) {
-//       throw ( err );
-//     }
-//
-//   } ); //end connection . query select all
-//
-// } // end selectAll function
-
-
-
+const connection = require("./connection.js");
 
 var orm = {
-
-  findOne: function() {
-    connection.query( "SELECT * FROM burgers;", function( err, results ) {
-
-      if ( err ) {
-        throw ( err );
+  all: function(cb) {
+    connection.query("SELECT * FROM burgers;", function(err, res) {
+      if (err) {
+        throw (err);
       }
-    } ); //end connection . query select all
-  } // end find one function
-} // end orm
+      console.log("query is", res);
+
+      cb(res);
+
+      // return res;
+    }); //end connection . query select all
+  } // end find all function
+}; // end orm
+
 module.exports = orm;
