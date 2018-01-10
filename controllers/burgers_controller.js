@@ -8,8 +8,6 @@ router.get("/", function(req, res) {
     var hbsObject = {
       burgers: data
     };
-    // res.render(hbsObject);
-    // console.log("hbs object is", hbsObject);
     res.render("index", hbsObject);
   });
 });
@@ -23,6 +21,5 @@ router.post('/burgers', function(req, res) {
     res.redirect('/');
   });
 });
-
 
 module.exports = router;
