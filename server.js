@@ -10,7 +10,7 @@ var exphbs = require("express-handlebars");
 const port = 3000;
 
 //this makes my handlbars.index not show up; my css does show up though
-// app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.static(path.join(__dirname, '/public')));
 
 app.use(bodyParser.urlencoded({
   extended: false
