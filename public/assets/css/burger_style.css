@@ -9,6 +9,14 @@ body {
   /* border: 1px solid red; */
 }
 
+ul {
+  list-style: none;
+}
+
+li {
+  margin-top: 10px;
+}
+
 #pic-container {
 /* border: 1px dotted orange; */
 }
